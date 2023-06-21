@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Selenium_testNG"
+           tests="2"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="9.608">
+    <properties></properties>
+
+
+
+            <testcase
+                name="Capture_Screenshot_during_fail"
+                time="0.177"
+                classname="testScripts.ScreenshotLearning">
+            </testcase>
+            <testcase
+                name="validate_Select_Functionality"
+                time="9.431"
+                classname="testScripts.ScreenshotLearning">
+            </testcase>
+</testsuite>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Smoke_Walmart3"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="4.468">
+    <properties></properties>
+
+
+
+            <testcase
+                name="print_all_links"
+                time="4.468"
+                classname="testScripts.Links_Walmart">
+            </testcase>
+</testsuite>

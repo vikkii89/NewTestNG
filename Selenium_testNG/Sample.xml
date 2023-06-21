@@ -2,19 +2,18 @@
 
 <suite name="Ford Application Testing" >
 
+    <parameter name="url" value="https://www.docker.com"></parameter>
+    <parameter name="username" value="user001"></parameter>
+    <parameter name="password" value="password001"></parameter>
 
 
     <test name="Docker" >
         <classes>
-            <class name="testScripts.Print_Links_InReport" />
+            <class name="testScripts.DockerTesting" />
         </classes>
     </test>
 
-    <test name="Google" >
-        <classes>
-            <class name="testScripts.Google_TC001" />
-        </classes>
-    </test>
+
 
 
 

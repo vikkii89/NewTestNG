@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Smoke_Amazon3"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="22.545">
+    <properties></properties>
+
+
+
+            <testcase
+                name="print_all_links"
+                time="22.545"
+                classname="testScripts.Links_Amazon">
+            </testcase>
+</testsuite>

@@ -7,15 +7,24 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
+import PageObject.Docker_Home;
+
 
 public class DockerTesting {
 
     public WebDriver driver;
+
+    public Docker_Home Home;
+
     @BeforeClass
-    public void setup(){
+    @Parameters({"url"})
+    public void setup(String url){
+        Home = new Docker_Home();
+
         System.setProperty(
                 "webdriver.chrome.driver",
                 "C:\\Users\\dhana\\Downloads\\chromedriver_win32\\chromedriver.exe");
@@ -24,7 +33,7 @@ public class DockerTesting {
          driver = new ChromeDriver();
 
         // launch the browser
-        driver.get("https://docker.com");
+        driver.get(url);
 
         // Maximize the browser
         driver.manage().window().maximize();
@@ -34,12 +43,18 @@ public class DockerTesting {
 
 
     @Test
-    public void docker_logo_validation(){
+    @Parameters({"username","password"})
+    public void docker_logo_validation(String username,String password){
 
             // validate Docker logo
-            if (driver.findElement(By.xpath("//li[@class='logo']")).isDisplayed()){
+            if (driver.findElement(Home.Logo_Link()).isDisplayed()){
                 System.out.println("Docker logo is displayed=====> PASS");
             }
+            if (driver.findElement(Home.SignIn_Link()).isDisplayed()){
+                System.out.println("Docker Sign in is displayed=====> PASS");
+        }
+        System.out.println("username is ===> "+username);
+        System.out.println("password is ===> "+password);
 
         }
 
@@ -74,6 +89,15 @@ public class DockerTesting {
 
     }
 
+    @Test
+    public void docker_SignIn_Validation(){
+
+        // validate Docker sign in
+        if (driver.findElement(Home.SignIn_Link()).isDisplayed()){
+            System.out.println("Docker Sign in is displayed=====> PASS");
+        }
+
+    }
 
     @AfterClass
     public void tearDown(){

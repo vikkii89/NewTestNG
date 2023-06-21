@@ -1,0 +1,29 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="manual2Automation Test Suite" parallel="false" thread-count="1">
+
+    <test name="include" >
+
+        <classes>
+            <class name="testScripts.TestNGwithIncludeAndExclude">
+                <methods>
+                    <include name="sign"/>
+                    <include name="cases"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="exclude" >
+
+        <classes>
+            <class name="testScripts.TestNGwithIncludeAndExclude">
+                <methods>
+                    <exclude name="hello"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+</suite>

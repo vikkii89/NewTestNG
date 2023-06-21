@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="manual2Automation1"
+           tests="2"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="0.004">
+    <properties></properties>
+
+
+
+            <testcase
+                name="sign"
+                time="0.004"
+                classname="testScripts.TestNGwithIncludeAndExclude">
+            </testcase>
+            <testcase
+                name="cases"
+                time="0.000"
+                classname="testScripts.TestNGwithIncludeAndExclude">
+            </testcase>
+</testsuite>

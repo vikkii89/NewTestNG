@@ -1,16 +1,44 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 
-<suite name="Suite1" verbose="1" >
-    <test name="Nopackage" >
+<suite name="Suite1" parallel="tests" thread-count="3" >
+
+
+
+    <test name="Smoke_Amazon1">
         <classes>
-            <class name="NoPackageTest" />
+            <class name="testScripts.Links_Amazon"/>
         </classes>
     </test>
 
-    <test name="Regression1">
+    <test name="Smoke_Walmart1">
         <classes>
-            <class name="test.sample.ParameterSample"/>
-            <class name="test.sample.ParameterTest"/>
+            <class name="testScripts.Links_Walmart"/>
+        </classes>
+    </test>
+
+
+    <test name="Smoke_Amazon2">
+        <classes>
+            <class name="testScripts.Links_Amazon"/>
+        </classes>
+    </test>
+
+    <test name="Smoke_Walmart2">
+        <classes>
+            <class name="testScripts.Links_Walmart"/>
+        </classes>
+    </test>
+
+
+    <test name="Smoke_Amazon3">
+        <classes>
+            <class name="testScripts.Links_Amazon"/>
+        </classes>
+    </test>
+
+    <test name="Smoke_Walmart3">
+        <classes>
+            <class name="testScripts.Links_Walmart"/>
         </classes>
     </test>
 </suite>

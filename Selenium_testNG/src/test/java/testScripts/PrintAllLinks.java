@@ -7,16 +7,14 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import java.io.File;
-import java.nio.file.Path;
 import java.time.Duration;
 
-public class Print_Links_InReport {
-
+public class PrintAllLinks {
 
     //helps to generate the logs in the test report.
     private ExtentSparkReporter spark;
@@ -34,14 +32,11 @@ public class Print_Links_InReport {
         // Create an object of Extent Reports
         extent = new ExtentReports();
 
-
-
-
         spark = new ExtentSparkReporter(System.getProperty("user.dir") + "/amazonLinks.html");
         extent.attachReporter(spark);
         extent.setSystemInfo("Host Name", "StarHealth Application - Home Plan");
-        extent.setSystemInfo("Environment", "QA");
-        extent.setSystemInfo("User Name", "Vignesh");
+        extent.setSystemInfo("Environment", "Production");
+        extent.setSystemInfo("User Name", "Test Team");
         spark.config().setDocumentTitle("pizzahutCheckout Application QA ");
         // Name of the report
         spark.config().setReportName("pizzahutCheckout Application Using Selenium testNG ");
@@ -53,17 +48,13 @@ public class Print_Links_InReport {
         System.out.println("##### Starting Chrome Browser ############");
 
 
-        /*ChromeOptions opt = new ChromeOptions();
+        ChromeOptions opt = new ChromeOptions();
         opt.addArguments("--remote-allow-origins=*");
-        WebDriverManager.chromedriver().setup();*/
 
-        System.setProperty(
-                "webdriver.chrome.driver",
-                "C:\\Users\\dhana\\Downloads\\chromedriver_win32\\chromedriver.exe");
-
-        driver = new ChromeDriver();
+       // WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver(opt);
         driver.manage().window().maximize();
-        driver.get("https://www.amazon.com");
+        driver.get("https://www.flipkart.com");
         driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(30));
     }
 
@@ -98,7 +89,7 @@ public class Print_Links_InReport {
         driver.quit();
         extent.flush();
     }
-
-
-
+    
 }
+
+

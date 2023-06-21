@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="exclude"
+           tests="3"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="0.020">
+    <properties></properties>
+
+
+
+            <testcase
+                name="sign"
+                time="0.002"
+                classname="testScripts.TestNGwithIncludeAndExclude">
+            </testcase>
+            <testcase
+                name="test"
+                time="0.000"
+                classname="testScripts.TestNGwithIncludeAndExclude">
+            </testcase>
+            <testcase
+                name="cases"
+                time="0.018"
+                classname="testScripts.TestNGwithIncludeAndExclude">
+            </testcase>
+</testsuite>

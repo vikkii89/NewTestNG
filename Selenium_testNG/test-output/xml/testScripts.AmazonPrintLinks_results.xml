@@ -4,23 +4,23 @@
            failures="1"
            errors="0"
            skipped="2"
-           time="1.177">
+           time="2.624">
     <properties></properties>
 
             <testcase
                 name="first_step"
-                time="1.177"
+                time="2.624"
                 classname="testScripts.AmazonPrintLinks">
 
             <failure type="org.openqa.selenium.SessionNotCreatedException" message="Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 111
-Current browser version is 114.0.5735.110 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe 
+Current browser version is 114.0.5735.134 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe 
 Host info: host: &apos;VIGNESHLP&apos;, ip: &apos;192.168.86.56&apos;
 Build info: version: &apos;4.9.0&apos;, revision: &apos;d7057100a6&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;20&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
 Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}]}]">
                 <![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of ChromeDriver only supports Chrome version 111
-Current browser version is 114.0.5735.110 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe 
+Current browser version is 114.0.5735.134 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe 
 Host info: host: 'VIGNESHLP', ip: '192.168.86.56'
 Build info: version: '4.9.0', revision: 'd7057100a6'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '20'
