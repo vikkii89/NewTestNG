@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Selenium_testNG"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="19.013">
+    <properties></properties>
+
+
+
+            <testcase
+                name="print_all_links"
+                time="19.013"
+                classname="testScripts.PrintAllLinks">
+            </testcase>
+</testsuite>

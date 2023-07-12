@@ -4,24 +4,24 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="4.476">
+           time="4.204">
     <properties></properties>
 
 
 
             <testcase
-                name="navigateToDockerProPage"
-                time="4.164"
+                name="docker_SignIn_Validation"
+                time="0.095"
                 classname="testScripts.DockerTesting">
             </testcase>
             <testcase
-                name="docker_SignIn_Validation"
-                time="0.196"
+                name="navigateToDockerProPage"
+                time="4.028"
                 classname="testScripts.DockerTesting">
             </testcase>
             <testcase
                 name="docker_logo_validation"
-                time="0.116"
+                time="0.081"
                 classname="testScripts.DockerTesting">
             </testcase>
 </testsuite>

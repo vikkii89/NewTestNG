@@ -1,33 +1,29 @@
-package testScripts;
+package stepDefinition;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
-import com.aventstack.extentreports.reporter.configuration.Theme;
+import io.cucumber.java.After;
 import org.openqa.selenium.By;
+import com.aventstack.extentreports.reporter.configuration.Theme;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class PrintAllLinks {
+public class Flipkart {
 
-    //helps to generate the logs in the test report.
     private ExtentSparkReporter spark;
     private ExtentReports extent;
     private ExtentTest logger;
 
-
     WebDriver driver;
-
-
-    @BeforeClass
-    public void setup() {
-
+    @Given("user generate report using Extent report")
+    public void user_generate_report_using_extent_report() {
         System.setProperty(
                 "webdriver.chrome.driver",
                 "C:\\Users\\dhana\\Downloads\\chromedriver_win32\\chromedriver.exe");
@@ -49,28 +45,39 @@ public class PrintAllLinks {
         logger = extent.createTest("Validate flipkart Checkout Application Using Selenium testNG");
 
 
+
+    }
+
+    @Then("user launch flipkart website with URL as {string}")
+    public void user_launch_flipkart_website_with_url_as(String string) {
+
         System.out.println("##### Starting Chrome Browser ############");
 
 
         ChromeOptions opt = new ChromeOptions();
         opt.addArguments("--remote-allow-origins=*");
 
-       // WebDriverManager.chromedriver().setup();
+        // WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver(opt);
         driver.manage().window().maximize();
         driver.get("https://www.flipkart.com");
-        driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(10));
+        driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(5));
+
     }
 
+    @Then("user validate flipkart logo")
+    public void user_validate_flipkart_logo() {
 
-    @Test
-    public void print_all_links() {
+        driver.findElement(By.xpath("//img[@alt='Flipkart']")).isDisplayed();
+
+    }
+
+    @Then("user print all the links in flipkart website")
+    public void user_print_all_the_links_in_flipkart_website() {
+
         try {
             int link_count = driver.findElements(By.xpath("//a")).size();
             for (int i = 1; i < link_count; i++) {
-
-
-
 
                 String link = driver.findElement(By.xpath("(//a)[" + i + "]")).getText();
                 String href = driver.findElement(By.xpath("(//a)[" + i + "]")).getAttribute("href");
@@ -82,18 +89,15 @@ public class PrintAllLinks {
         } catch (Exception e) {
         }
 
-
-
-
     }
 
-
-    @AfterClass
-    public void quit_the_session() {
-        driver.quit();
+    @After
+    public void teardown(){
         extent.flush();
+
+        driver.quit();
+
     }
-    
+
+
 }
-
-
